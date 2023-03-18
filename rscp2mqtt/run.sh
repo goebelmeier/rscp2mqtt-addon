@@ -1,0 +1,44 @@
+#!/usr/bin/with-contenv bashio
+RSCP2MQTT_E3DC_IP=$(bashio::config 'e3dc_ip')
+RSCP2MQTT_E3DC_PORT=$(bashio::config 'e3dc_port')
+RSCP2MQTT_E3DC_USER=$(bashio::config 'e3dc_user')
+RSCP2MQTT_E3DC_PASSWORD=$(bashio::config 'e3dc_password')
+RSCP2MQTT_E3DC_AES_PASSWORD=$(bashio::config 'e3dc_aes_password')
+RSCP2MQTT_MQTT_HOST=$(bashio::services mqtt "host")
+RSCP2MQTT_MQTT_PORT=$(bashio::services mqtt "port")
+RSCP2MQTT_MQTT_USER=$(bashio::services mqtt "username")
+RSCP2MQTT_MQTT_PASSWORD=$(bashio::services mqtt "password")
+RSCP2MQTT_MQTT_QOS=$(bashio::config 'mqtt_qos')
+RSCP2MQTT_MQTT_RETAIN=$(bashio::config 'mqtt_retain')
+RSCP2MQTT_LOGFILE=$(bashio::config 'logfile')
+RSCP2MQTT_INTERVAL=$(bashio::config 'interval')
+RSCP2MQTT_PVI_REQUESTS=$(bashio::config 'pvi_requests')
+RSCP2MQTT_PVI_TRACKER=$(bashio::config 'pvi_tracker')
+RSCP2MQTT_PM_REQUESTS=$(bashio::config 'pm_requests')
+RSCP2MQTT_AUTO_REFRESH=$(bashio::config 'auto_refresh')
+RSCP2MQTT_DRYRUN=$(bashio::config 'dryrun')
+
+cat << EOF > /opt/rscp2mqtt/.config
+E3DC_IP=$RSCP2MQTT_E3DC_IP
+E3DC_PORT=$RSCP2MQTT_E3DC_PORT
+E3DC_USER=$RSCP2MQTT_E3DC_USER
+E3DC_PASSWORD=$RSCP2MQTT_E3DC_PASSWORD
+E3DC_AES_PASSWORD=$RSCP2MQTT_E3DC_AES_PASSWORD
+MQTT_HOST=$RSCP2MQTT_MQTT_HOST
+MQTT_PORT=$RSCP2MQTT_MQTT_PORT
+MQTT_AUTH=true
+MQTT_USER=$RSCP2MQTT_MQTT_USER
+MQTT_PASSWORD=$RSCP2MQTT_MQTT_PASSWORD
+MQTT_QOS=$RSCP2MQTT_MQTT_QOS
+MQTT_RETAIN=$RSCP2MQTT_MQTT_RETAIN
+LOGFILE=$RSCP2MQTT_LOGFILE
+INTERVAL=$RSCP2MQTT_INTERVAL
+PVI_REQUESTS=$RSCP2MQTT_PVI_REQUESTS
+PVI_TRACKER=$RSCP2MQTT_PVI_TRACKER
+PM_REQUESTS=$RSCP2MQTT_PM_REQUESTS
+AUTO_REFRESH=$RSCP2MQTT_AUTO_REFRESH
+DRYRUN=$RSCP2MQTT_DRYRUN
+EOF
+
+cd /opt/rscp2mqtt/
+/opt/rscp2mqtt/rscp2mqtt

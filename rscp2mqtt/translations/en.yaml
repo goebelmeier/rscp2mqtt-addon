@@ -1,0 +1,44 @@
+---
+configuration:
+  e3dc_ip:
+    name: E3/DC IP address
+    description: IP address of the E3/DC S10 device
+  e3dc_port:
+    name: E3/DC port
+    description: Port of the E3/DC S10 device, default is 5033
+  e3dc_user:
+    name: E3/DC user
+    description: E3/DC account username (e-mail address)
+  e3dc_password:
+    name: E3/DC password
+    description: E3/DC account password
+  e3dc_aes_password:
+    name: E3/DC RSCP password
+    description: E3/DC RSCP password as configured at the device
+  mqtt_qos:
+    name: MQTT Quality of Service
+    description: "QoS in MQTT supports 3 levels: At most once (0), At least once (1) and Exactly once (2)"
+  mqtt_retain:
+    name: MQTT retain
+    description: Should MQTT messages be retained for newly connecting clients?
+  logfile:
+    name: rscp2mqtt logfile
+    description: Optional path to a logfile
+  interval:
+    name: Request interval
+    description: Interval requesting the E3/DC device in seconds (1..10)
+  pvi_requests:
+    name: PV inverter requests
+    description: Enable PVI requests, default is true
+  pvi_tracker:
+    name: Number of inverter trackers
+    description: Number of available PV strings / MPP trackers, default is 2
+  pm_requests:
+    name: Power Management requests
+    description: Enable PM requests, default is true
+  auto_refresh:
+    name: Auto refresh
+    description: Auto refresh enables setting power management using MQTT publish, default is false
+  dryrun:
+    name: Dryrun
+    description: Test mode (E3/DC requests yes, MQTT publications no), default is false
