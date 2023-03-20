@@ -25,5 +25,5 @@ Even better: You could submit a pull request with a fix / new feature!
    developers, or if you do not have permission to do that, you may request
    the second reviewer to merge it for you.
 
-[github]: https://github.com/goebelmeier/rscp2mqtt/issues
-[prs]: https://github.com/goebelmeier/rscp2mqtt/pulls
+[github]: https://github.com/goebelmeier/ha-addons/issues
+[prs]: https://github.com/goebelmeier/ha-addons/pulls

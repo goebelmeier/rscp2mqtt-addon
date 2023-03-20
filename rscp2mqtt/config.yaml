@@ -11,7 +11,7 @@ arch:
   - armhf
   - armv7
   - i386
-url: "https://github.com/goebelmeier/rscp2mqtt"
+url: "https://github.com/goebelmeier/ha-addons/tree/main/rscp2mqtt"
 startup: "services"
 options:
   e3dc_ip: null

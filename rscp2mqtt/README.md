@@ -37,7 +37,7 @@ Supported topic areas are:
 - Values of the photovoltaic inverter (PVI)
 - Values of the emergency power supply (EP)
 
-[:books: Read the full add-on documentation][docs]
+[Read the full add-on documentation][docs]
 
 ## Support
 
