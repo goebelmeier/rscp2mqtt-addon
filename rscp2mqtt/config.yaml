@@ -1,3 +1,4 @@
+---
 name: "rscp2mqtt"
 description: "Bridge between an E3/DC pv inverter device and a MQTT broker"
 version: "0.0.29"

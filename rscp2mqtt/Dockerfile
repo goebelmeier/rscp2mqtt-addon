@@ -1,8 +1,8 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM as builder
-RUN apk add --no-cache mosquitto-dev
-RUN apk add --no-cache git
-RUN apk add --no-cache build-base
+RUN apk add --no-cache mosquitto-dev@2.0.15-r1
+RUN apk add --no-cache git@2.38.4-r1
+RUN apk add --no-cache build-base@0.5-r3
 WORKDIR /tmp
 RUN git clone https://github.com/pvtom/rscp2mqtt.git
 WORKDIR /tmp/rscp2mqtt
