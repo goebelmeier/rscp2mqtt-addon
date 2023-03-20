@@ -37,6 +37,15 @@ Supported topic areas are:
 - Values of the photovoltaic inverter (PVI)
 - Values of the emergency power supply (EP)
 
+## Installation
+
+1. [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.][repo-badge]][repo]
+otherwise navigate in your Home Assistant frontend to **Settings** -> **Add-ons** -> **Add-on Store** and add this URL
+as an additional repository: `https://github.com/goebelmeier/ha-addons`
+2. Refresh your browser
+3. Find the `rscp2mqtt` add-on and click the `INSTALL` button.
+4. Configure the add-on and click on `START`.
+
 [Read the full add-on documentation][docs]
 
 ## Support
@@ -110,5 +119,7 @@ SOFTWARE.
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-orange.svg
 [releases-shield]: https://img.shields.io/github/release/goebelmeier/ha-addons.svg
 [releases]: https://github.com/goebelmeier/ha-addons/releases
+[repo]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fgoebelmeier%2Fha-addons
+[repo-badge]: kttps://my.home-assistant.io/badges/supervisor_add_addon_repository.svg
 [rscp2mqtt]: https://github.com/pvtom/rscp2mqtt
 [rscp2mqtt-issue]: https://github.com/pvtom/rscp2mqtt/issues
