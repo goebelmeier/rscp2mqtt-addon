@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: Example
+# Home Assistant rscp2mqtt Add-on: Bridge between an E3/DC pv inverter device and a MQTT broker
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -14,48 +14,35 @@
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 
-[![Discord][discord-shield]][discord]
-[![Community Forum][forum-shield]][forum]
-
-[![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
-
-[![Support Frenck on Patreon][patreon-shield]][patreon]
-
-Example add-on by Community Home Assistant add-ons.
+[Sponsor Timo via GitHub Sponsors][github-sponsors]
 
 ## About
 
-This is an example add-on for Home Assistant. When started, it displays a
-random quote every 5 seconds.
+This is an add-on for Home Assistant which uses the Remote-Storage-Control-Protocol (RSCP) to communicate with E3/DC 
+home power plants consisting of PV inverters, batteries and battery converters. This addon is based on the great
+[rscp2mqtt][rscp2mqtt] projekt which itself is based on the HagerEnergy RSCP sample application.
 
-It shows off several features and structures like:
+The tool fetches the data cyclically from the S10 and publishes it to the MQTT broker under certain topics. Only 
+modified values will be published.
 
-- Full blown GitHub repository.
-- General Dockerfile structure and setup.
-- The use of the `config.yaml` and `build.yaml` files.
-- General structure on how to use S6 overlay with services.
-- Basic usage of Bashio.
-- Continuous integration and deployment using GitHub Actions.
-- Deployment to the GitHub Container registry.
-- Small use of the Bash function library in our base images.
-- The use of Docker label schema.
+Supported topic areas are:
+
+- Energy topics for today
+- Current power values
+- Autarky and self-consumption
+- Battery status
+- Energy management (EMS) power settings
+- Data from yesterday and the current week, month and year
+- Values of the power meter (PM)
+- Values of the photovoltaic inverter (PVI)
+- Values of the emergency power supply (EP)
 
 [:books: Read the full add-on documentation][docs]
 
 ## Support
 
-Got questions?
-
-You have several options to get them answered:
-
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
-
-You could also [open an issue here][issue] GitHub.
+Got questions? If it's related towards the add-on itself, you could [open an issue here][issue] here on GitHub.
+If it's related towards rscp2mqtt you better [open an issue][rscp2mqtt-issue] inside its project.
 
 ## Contributing
 
@@ -69,23 +56,21 @@ Thank you for being involved! :heart_eyes:
 
 ## Authors & contributors
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+The original setup of this repository is by [Timo Reimann][goebelmeier].
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+For a full list of all authors and contributors, check [the contributor's page][contributors].
 
 ## We have got some Home Assistant add-ons for you
 
 Want some more functionality to your Home Assistant instance?
 
-We have created multiple add-ons for Home Assistant. For a full list, check out
-our [GitHub Repository][repository].
+There are multiple add-ons for Home Assistant. For a full list, check out the [GitHub Repository][ha-addon-repository].
 
 ## License
 
 MIT License
 
-Copyright (c) 2017-2023 Franck Nijhof
+Copyright (c) 2023 Timo Reimann
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -109,28 +94,21 @@ SOFTWARE.
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-example.svg
-[commits]: https://github.com/hassio-addons/addon-example/commits/main
-[contributors]: https://github.com/hassio-addons/addon-example/graphs/contributors
-[discord-ha]: https://discord.gg/c5DvZ4e
-[discord-shield]: https://img.shields.io/discord/478094546522079232.svg
-[discord]: https://discord.me/hassioaddons
-[docs]: https://github.com/hassio-addons/addon-example/blob/main/example/DOCS.md
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
-[frenck]: https://github.com/frenck
-[github-actions-shield]: https://github.com/hassio-addons/addon-example/workflows/CI/badge.svg
-[github-actions]: https://github.com/hassio-addons/addon-example/actions
-[github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
-[github-sponsors]: https://github.com/sponsors/frenck
+[commits-shield]: https://img.shields.io/github/commit-activity/y/goebelmeier/rscp2mqtt-addon.svg
+[commits]: https://github.com/goebelmeier/rscp2mqtt-addon/commits/main
+[contributors]: https://github.com/goebelmeier/rscp2mqtt-addon/graphs/contributors
+[docs]: https://github.com/goebelmeier/rscp2mqtt-addon/blob/main/rscp2mqtt/DOCS.md
+[github-actions-shield]: https://github.com/goebelmeier/rscp2mqtt-addon/workflows/CI/badge.svg
+[github-actions]: https://github.com/goebelmeier/rscp2mqtt-addon/actions
+[github-sponsors]: https://github.com/sponsors/goebelmeier
+[goebelmeier]: https://github.com/goebelmeier/
+[ha-addon-repository]: https://github.com/hassio-addons/repository
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-[issue]: https://github.com/hassio-addons/addon-example/issues
-[license-shield]: https://img.shields.io/github/license/hassio-addons/addon-example.svg
+[issue]: https://github.com/goebelmeier/rscp2mqtt-addon/issues
+[license-shield]: https://img.shields.io/github/license/goebelmeier/rscp2mqtt-addon.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
-[patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
-[patreon]: https://www.patreon.com/frenck
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
-[reddit]: https://reddit.com/r/homeassistant
-[releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-example.svg
-[releases]: https://github.com/hassio-addons/addon-example/releases
-[repository]: https://github.com/hassio-addons/repository
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-orange.svg
+[releases-shield]: https://img.shields.io/github/release/goebelmeier/rscp2mqtt-addon.svg
+[releases]: https://github.com/goebelmeier/rscp2mqtt-addon/releases
+[rscp2mqtt]: https://github.com/pvtom/rscp2mqtt
+[rscp2mqtt-issue]: https://github.com/pvtom/rscp2mqtt/issues
