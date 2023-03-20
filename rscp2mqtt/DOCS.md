@@ -1,38 +1,43 @@
-# Home Assistant Community Add-on: Example
+# Home Assistant rscp2mqtt Add-on: Bridge between an E3/DC pv inverter device and a MQTT broker
 
-This is an example add-on for Home Assistant. When started, it displays a
-random quote every 5 seconds.
+This is an add-on for Home Assistant which uses the Remote-Storage-Control-Protocol (RSCP) to communicate with E3/DC 
+home power plants consisting of PV inverters, batteries and battery converters. This addon is based on the great
+[rscp2mqtt][rscp2mqtt] projekt which itself is based on the HagerEnergy RSCP sample application.
 
-It shows off several features and structures like:
+The tool fetches the data cyclically from the S10 and publishes it to the MQTT broker under certain topics. Only 
+modified values will be published.
 
-- Full blown GitHub repository.
-- General Dockerfile structure and setup.
-- The use of the `config.yaml` and `build.yaml` files.
-- General shell scripting structure (`run.sh`).
-- Quality assurance using CodeClimate.
-- Continuous integration and deployment using GitLab.
-- Usage of the Community Home Assistant Add-ons build environment.
-- Small use of the Bash function library in our base images.
-- The use of Docker label schema.
+Supported topic areas are:
+
+- Energy topics for today
+- Current power values
+- Autarky and self-consumption
+- Battery status
+- Energy management (EMS) power settings
+- Data from yesterday and the current week, month and year
+- Values of the power meter (PM)
+- Values of the photovoltaic inverter (PVI)
+- Values of the emergency power supply (EP)
 
 ## Installation
 
-The installation of this add-on is pretty straightforward and not different in
-comparison to installing any other Home Assistant add-on.
+The installation of this add-on is pretty straightforward and not different in comparison to installing any other 
+Home Assistant add-on.
 
 1. Click the Home Assistant My button below to open the add-on on your Home
    Assistant instance.
 
    [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
 
-1. Click the "Install" button to install the add-on.
-1. Start the "Example" add-on.
-1. Check the logs of the "Example" add-on to see it in action.
+2. If not added already, allow Home Assistant to add the add-on repository to your Home Assistant installation
+3. Click the "Install" button to install the add-on.
+4. Configure required configuration. Please find an explanation of all required configuration options below.
+5. Start the "rscp2mqtt" add-on.
+6. Check the logs of the "rscp2mqtt" add-on to see it in action.
 
 ## Configuration
 
-Eventought this add-on is just an example add-on, it does come with some
-configuration options to play around with.
+Eventought this add-on is just an example add-on, it does come with some configuration options to play around with.
 
 **Note**: _Remember to restart the add-on when the configuration is changed._
 
@@ -82,31 +87,20 @@ based on the following:
 
 ## Support
 
-Got questions?
-
-You have several options to get them answered:
-
-- The [Home Assistant Community Add-ons Discord chat server][discord] for add-on
-  support and feature requests.
-- The [Home Assistant Discord chat server][discord-ha] for general Home
-  Assistant discussions and questions.
-- The Home Assistant [Community Forum][forum].
-- Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
-
-You could also [open an issue here][issue] GitHub.
+Got questions? If it's related towards the add-on itself, you could [open an issue here][issue] here on GitHub.
+If it's related towards rscp2mqtt you better [open an issue][rscp2mqtt-issue] inside its project.
 
 ## Authors & contributors
 
-The original setup of this repository is by [Franck Nijhof][frenck].
+The original setup of this repository is by [Timo Reimann][goebelmeier].
 
-For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+For a full list of all authors and contributors, check [the contributor's page][contributors].
 
 ## License
 
 MIT License
 
-Copyright (c) 2017-2023 Franck Nijhof
+Copyright (c) 2023 Timo Reimann
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -127,13 +121,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 [addon-badge]: https://my.home-assistant.io/badges/supervisor_addon.svg
-[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=a0d7b954_example&repository_url=https%3A%2F%2Fgithub.com%2Fhassio-addons%2Frepository
-[contributors]: https://github.com/hassio-addons/addon-example/graphs/contributors
-[discord-ha]: https://discord.gg/c5DvZ4e
-[discord]: https://discord.me/hassioaddons
-[forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
-[frenck]: https://github.com/frenck
-[issue]: https://github.com/hassio-addons/addon-example/issues
-[reddit]: https://reddit.com/r/homeassistant
-[releases]: https://github.com/hassio-addons/addon-example/releases
+[addon]: https://my.home-assistant.io/redirect/supervisor_addon/?addon=rscp2mqtt&repository_url=https%3A%2F%2Fgithub.com%2Fgoebelmeier%2Fha-addons
+[contributors]: https://github.com/goebelmeier/ha-addons/graphs/contributors
+[goebelmeier]: https://github.com/goebelmeier/
+[issue]: https://github.com/goebelmeier/ha-addons/issues
+[releases]: https://github.com/goebelmeier/ha-addons/releases
 [semver]: http://semver.org/spec/v2.0.0.html
+[rscp2mqtt]: https://github.com/pvtom/rscp2mqtt
+[rscp2mqtt-issue]: https://github.com/pvtom/rscp2mqtt/issues
