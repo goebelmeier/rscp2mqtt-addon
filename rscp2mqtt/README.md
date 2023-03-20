@@ -120,6 +120,6 @@ SOFTWARE.
 [releases-shield]: https://img.shields.io/github/release/goebelmeier/ha-addons.svg
 [releases]: https://github.com/goebelmeier/ha-addons/releases
 [repo]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fgoebelmeier%2Fha-addons
-[repo-badge]: kttps://my.home-assistant.io/badges/supervisor_add_addon_repository.svg
+[repo-badge]: https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg
 [rscp2mqtt]: https://github.com/pvtom/rscp2mqtt
 [rscp2mqtt-issue]: https://github.com/pvtom/rscp2mqtt/issues
