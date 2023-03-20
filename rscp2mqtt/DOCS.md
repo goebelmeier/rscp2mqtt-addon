@@ -1,10 +1,10 @@
 # Home Assistant rscp2mqtt Add-on: Bridge between an E3/DC pv inverter device and a MQTT broker
 
-This is an add-on for Home Assistant which uses the Remote-Storage-Control-Protocol (RSCP) to communicate with E3/DC 
+This is an add-on for Home Assistant which uses the Remote-Storage-Control-Protocol (RSCP) to communicate with E3/DC
 home power plants consisting of PV inverters, batteries and battery converters. This addon is based on the great
 [rscp2mqtt][rscp2mqtt] projekt which itself is based on the HagerEnergy RSCP sample application.
 
-The tool fetches the data cyclically from the S10 and publishes it to the MQTT broker under certain topics. Only 
+The tool fetches the data cyclically from the S10 and publishes it to the MQTT broker under certain topics. Only
 modified values will be published.
 
 Supported topic areas are:
@@ -21,7 +21,7 @@ Supported topic areas are:
 
 ## Installation
 
-The installation of this add-on is pretty straightforward and not different in comparison to installing any other 
+The installation of this add-on is pretty straightforward and not different in comparison to installing any other
 Home Assistant add-on.
 
 1. Click the Home Assistant My button below to open the add-on on your Home
@@ -30,47 +30,110 @@ Home Assistant add-on.
    [![Open this add-on in your Home Assistant instance.][addon-badge]][addon]
 
 2. If not added already, allow Home Assistant to add the add-on repository to your Home Assistant installation
-3. Click the "Install" button to install the add-on.
-4. Configure required configuration. Please find an explanation of all required configuration options below.
-5. Start the "rscp2mqtt" add-on.
-6. Check the logs of the "rscp2mqtt" add-on to see it in action.
+3. Click the `Install` button to install the add-on.
+4. If not done already, activate RSCP on your E3/DC device:
+    - `Main menu`
+    - `Settings`
+    - `Personalize`
+    - The password set is required later in the parameters of the software.
+5. Configure required configuration. Please find an explanation of all required configuration options below.
+6. Start the `rscp2mqtt` add-on.
+7. Check the logs of the `rscp2mqtt` add-on to see it in action.
 
 ## Configuration
 
-Eventought this add-on is just an example add-on, it does come with some configuration options to play around with.
+This addon requires a certain minimum configuration before it can be started for the first time. More details regarding
+the configuration can be found inside the [rscp2mqtt project][rscp2mqtt-config]
 
 **Note**: _Remember to restart the add-on when the configuration is changed._
 
 Example add-on configuration:
 
 ```yaml
-log_level: info
-seconds_between_quotes: 5
+e3dc_ip: 192.0.2.137
+e3dc_port: 5033
+e3dc_user: photovoltaic@example.com
+e3dc_password: example_password_123
+e3dc_aes_password: rscp_password_example
+mqtt_qos: 0
+mqtt_retain: false
+logfile: ""
+interval: 1
+pvi_requests: true
+pvi_tracker: 2
+pm_requests: true
+auto_refresh: true
+dryrun: false
 ```
 
-### Option: `log_level`
+### Option: `e3dc_ip`
 
-The `log_level` option controls the level of log output by the add-on and can
-be changed to be more or less verbose, which might be useful when you are
-dealing with an unknown issue. Possible values are:
+The `e3dc_ip` option is used for the ip address of the E3/DC device. You can look up the IP address at the Settings
+dialog at the E3/DC device inside the `Network` section.
 
-- `trace`: Show every detail, like all called internal functions.
-- `debug`: Shows detailed debug information.
-- `info`: Normal (usually) interesting events.
-- `warning`: Exceptional occurrences that are not errors.
-- `error`: Runtime errors that do not require immediate action.
-- `fatal`: Something went terribly wrong. Add-on becomes unusable.
+### Option: `e3dc_port`
 
-Please note that each level automatically includes log messages from a
-more severe level, e.g., `debug` also shows `info` messages. By default,
-the `log_level` is set to `info`, which is the recommended setting unless
-you are troubleshooting.
+The `e3dc_port` option contains the RSCP port of the E3/DC device, default is 5033
 
-### Option: `seconds_between_quotes`
+### Option: `e3dc_user`
 
-Sets the number of seconds between the output of each quote. The value
-must be between `1` and `120` seconds. This value is set to `5` seconds by
-default.
+The `e3dc_user` option has to be filled with the e-mail address used to login at the E3/DC web portal
+
+### Option: `e3dc_password`
+
+The `e3dc_password` option has to be filled with the e-mail address used to login at the E3/DC web portal
+
+### Option: `e3dc_aes_password`
+
+The `e3dc_ip` option is used for the RSCP password which needs to be set directly on the E3/DC device.
+
+### Option: `mqtt_qos`
+
+The `mqtt_qos` defines the Quality of Service setting for all MQTT messages. Possible values are:
+
+- `0`:  At most once
+- `1`: At least once
+- `2`:  Exactly once
+
+### Option: `mqtt_retain`
+
+The `mqtt_retain` option can be set true or false and defines wether old mqtt messages should be kept retained for newly
+connecting clients (`true`) or new clients should just receive messages which were created after the client connected
+to the MQTT broker (`false`)
+
+### Option: `logfile`
+
+`logfile` is optional and can be used to define a file system location for the logfile. If empty, logs will be written
+to `stdout`
+
+### Option: `interval`
+
+`interval` defines the interval in seconds how often the addon should query the E3/DC device and update mqtt. `ìnterval`
+can be set between `1` and `10` seconds, default is `1`.
+
+### Option: `pvi_requests`
+
+`pvi_requests` configures if PV inverter details should be queried from the E3/DC device
+
+### Option: `pvi_tracker`
+
+`pvi_tracker` may be either `1` or `2` and defines if one or both MPP trackers on the E3/DC device are populated with
+PV strings.
+
+### Option: `pm_requests`
+
+`pm_requests` configures if power meter details should be queried from the E3/DC device
+
+### Option: `auto_refresh`
+
+The `e3dc_ip` controls if E3/DC power management features can be set by sending MQTT payload to specific topics. See
+the [rscp2mqtt project for further details][rscp2mqtt-pm]. Default is `false` so rscp2mqtt works read-only and nobody
+is allowed to configure the E3/DC device using MQTT.
+
+### Option: `dryrun`
+
+The `dryrun` option is used for a test mode, so the E3/DC device gets queries, but there is nothing published towards
+MQTT. Default is `false`.
 
 ## Changelog & Releases
 
@@ -128,4 +191,6 @@ SOFTWARE.
 [releases]: https://github.com/goebelmeier/ha-addons/releases
 [semver]: http://semver.org/spec/v2.0.0.html
 [rscp2mqtt]: https://github.com/pvtom/rscp2mqtt
-[rscp2mqtt-issue]: https://github.com/pvtom/rscp2mqtt/issues
+[rscp2mqtt-config]: https://github.com/pvtom/rscp2mqtt/#configuration--test
+[rscp2mqtt-pm]: https://github.com/pvtom/rscp2mqtt/#power-management
+[rscp2mqtt-issue]: https://github.com/pvtom/rscp2mqtt/issue

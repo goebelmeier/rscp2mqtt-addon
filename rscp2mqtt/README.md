@@ -18,11 +18,11 @@
 
 ## About
 
-This is an add-on for Home Assistant which uses the Remote-Storage-Control-Protocol (RSCP) to communicate with E3/DC 
+This is an add-on for Home Assistant which uses the Remote-Storage-Control-Protocol (RSCP) to communicate with E3/DC
 home power plants consisting of PV inverters, batteries and battery converters. This addon is based on the great
 [rscp2mqtt][rscp2mqtt] projekt which itself is based on the HagerEnergy RSCP sample application.
 
-The tool fetches the data cyclically from the S10 and publishes it to the MQTT broker under certain topics. Only 
+The tool fetches the data cyclically from the S10 and publishes it to the MQTT broker under certain topics. Only
 modified values will be published.
 
 Supported topic areas are:
