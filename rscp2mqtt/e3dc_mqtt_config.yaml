@@ -3,80 +3,92 @@ sensor:
     state_topic: "e3dc/addon/power"
     unit_of_measurement: "W"
     device_class: "power"
+    state_class: measurement
     icon: "mdi:electrical_services"
 
   - name: "E3DC Autarky"
     state_topic: "e3dc/autarky"
+    state_class: measurement
     unit_of_measurement: "%"
 
   - name: "E3DC Battery Current"
     state_topic: "e3dc/battery/current"
     unit_of_measurement: "A"
     device_class: "current"
-    icon: "mdi:battery_full"
+    state_class: measurement
+    icon: "mdi:battery"
 
   - name: "E3DC Battery Cycles"
     state_topic: "e3dc/battery/cycles"
-    icon: "mdi:change_circle"
+    state_class: total_increasing
+    icon: "mdi:autorenew"
 
   - name: "E3DC Battery Modules Count"
     state_topic: "e3dc/battery/dcb_count"
+    state_class: measurement
 
   - name: "E3DC Battery Energy Charge"
     state_topic: "e3dc/battery/energy/charge"
     unit_of_measurement: "kWh"
-    device_class: "energy_storage"
-    icon: "mdi:bolt"
+    device_class: "energy"
+    state_class: total_increasing
+    icon: "mdi:lightning-bolt"
 
   - name: "E3DC Battery Energy Discharge"
     state_topic: "e3dc/battery/energy/discharge"
     unit_of_measurement: "kWh"
-    device_class: "energy_storage"
-    icon: "mdi:bolt"
+    device_class: "energy"
+    state_class: total_increasing
+    icon: "mdi:lightning-bolt"
 
   - name: "E3DC Battery Error Code"
     state_topic: "e3dc/battery/error"
-    icon: "mdi:error"
+    icon: "mdi:alert"
 
   - name: "E3DC Battery Device Name"
     state_topic: "e3dc/battery/name"
-    icon: "mdi:battery_full"
+    icon: "mdi:battery"
 
   - name: "E3DC Battery Power"
     state_topic: "e3dc/battery/power"
     unit_of_measurement: "E"
     device_class: "power"
-    icon: "mdi:battery_full"
+    state_class: measurement
+    icon: "mdi:battery"
 
   - name: "E3DC Battery RSoC"
     state_topic: "e3dc/battery/rsoc"
     unit_of_measurement: "%"
     device_class: "battery"
-    icon: "mdi:battery_full"
+    state_class: measurement
+    icon: "mdi:battery"
 
   - name: "E3DC Battery SoC"
     state_topic: "e3dc/battery/soc"
     unit_of_measurement: "%"
     device_class: "battery"
-    icon: "mdi:battery_full"
+    state_class: measurement
+    icon: "mdi:battery"
 
   - name: "E3DC Battery Status Code"
     state_topic: "e3dc/battery/status"
-    icon: "mdi:battery_full"
+    icon: "mdi:battery"
 
   - name: "E3DC Battery Training Mode"
     state_topic: "e3dc/battery/training"
-    icon: "mdi:battery_full"
+    icon: "mdi:battery"
 
   - name: "E3DC Battery Voltage"
     state_topic: "e3dc/battery/voltage"
     unit_of_measurement: "V"
     device_class: "voltage"
-    icon: "mdi:battery_full"
+    state_class: measurement
+    icon: "mdi:battery"
 
   - name: "E3DC Consumed Production"
     state_topic: "e3dc/consumed"
     unit_of_measurement: "%"
+    state_class: measurement
 
   - name: "E3DC Coupling Mode"
     state_topic: "e3dc/coupling/mode"
@@ -85,36 +97,42 @@ sensor:
     state_topic: "e3dc/ems/discharge_start/power"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:bolt"
+    state_class: measurement
+    icon: "mdi:lightning-bolt"
 
   - name: "E3DC Grid In Energy"
     state_topic: "e3dc/grid/energy/in"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:arrow_back"
 
   - name: "E3DC Grid Out Energy"
     state_topic: "e3dc/grid/energy/out"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:arrow_forward"
 
   - name: "E3DC Grid Power"
     state_topic: "e3dc/grid/power"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:bolt"
+    state_class: measurement
+    icon: "mdi:lightning-bolt"
 
   - name: "E3DC Home Energy"
     state_topic: "e3dc/home/energy"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:home"
 
   - name: "E3DC Home Power"
     state_topic: "e3dc/home/power"
     unit_of_measurement: "W"
     device_class: "power"
+    state_class: measurement
     icon: "mdi:home"
 
   - name: "E3DC Mode"
@@ -123,231 +141,267 @@ sensor:
   - name: "E3DC Month Autarky"
     state_topic: "e3dc/month/autarky"
     unit_of_measurement: "%"
+    state_class: measurement
 
   - name: "E3DC Month Battery Energy Charge"
     state_topic: "e3dc/month/battery/energy/charge"
     unit_of_measurement: "kWh"
-    device_class: "energy_storage"
-    icon: "mdi:battery_full"
+    device_class: "energy"
+    state_class: total_increasing
+    icon: "mdi:battery"
 
   - name: "E3DC Month Battery Energy Discharge"
     state_topic: "e3dc/month/battery/energy/discharge"
     unit_of_measurement: "kWh"
-    device_class: "energy_storage"
-    icon: "mdi:battery_full"
+    device_class: "energy"
+    state_class: total_increasing
+    icon: "mdi:battery"
 
   - name: "E3DC Month Consumed Production"
     state_topic: "e3dc/month/consumed"
     unit_of_measurement: "%"
+    state_class: measurement
 
   - name: "E3DC Month Grid In Energy"
     state_topic: "e3dc/month/grid/energy/in"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:arrow_back"
 
   - name: "E3DC Month Grid Out Energy"
     state_topic: "e3dc/month/grid/energy/out"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:arrow_forward"
 
   - name: "E3DC Month Home Energy"
     state_topic: "e3dc/month/home/energy"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:home"
 
   - name: "E3DC Month Solar Energy"
     state_topic: "e3dc/month/solar/energy"
     unit_of_measurement: "kWh"
     device_class: "energy"
-    icon: "mdi:solar_power"
+    state_class: total_increasing
+    icon: "mdi:solar-power"
 
   - name: "E3DC PM Energy L1"
     state_topic: "e3dc/pm/energy/L1"
     unit_of_measurement: "Wh"
     device_class: "energy"
-    icon: "mdi:bolt"
+    state_class: measurement
+    icon: "mdi:lightning-bolt"
 
   - name: "E3DC PM Energy L2"
     state_topic: "e3dc/pm/energy/L2"
     unit_of_measurement: "Wh"
     device_class: "energy"
-    icon: "mdi:bolt"
+    state_class: measurement
+    icon: "mdi:lightning-bolt"
 
   - name: "E3DC PM Energy L3"
     state_topic: "e3dc/pm/energy/L3"
     unit_of_measurement: "Wh"
     device_class: "energy"
-    icon: "mdi:bolt"
+    state_class: measurement
+    icon: "mdi:lightning-bolt"
 
   - name: "E3DC PM Power L1"
     state_topic: "e3dc/pm/power/L1"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:bolt"
+    state_class: measurement
+    icon: "mdi:lightning-bolt"
 
   - name: "E3DC PM Power L2"
     state_topic: "e3dc/pm/power/L2"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:bolt"
+    state_class: measurement
+    icon: "mdi:lightning-bolt"
 
   - name: "E3DC PM Power L3"
     state_topic: "e3dc/pm/power/L3"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:bolt"
+    state_class: measurement
+    icon: "mdi:lightning-bolt"
 
   - name: "E3DC PM Voltage L1"
     state_topic: "e3dc/pm/voltage/L1"
     unit_of_measurement: "V"
     device_class: "voltage"
-    icon: "mdi:bolt"
+    state_class: measurement
+    icon: "mdi:lightning-bolt"
 
   - name: "E3DC PM Voltage L2"
     state_topic: "e3dc/pm/voltage/L2"
     unit_of_measurement: "V"
     device_class: "voltage"
-    icon: "mdi:bolt"
+    state_class: measurement
+    icon: "mdi:lightning-bolt"
 
   - name: "E3DC PM Voltage L3"
     state_topic: "e3dc/pm/voltage/L3"
     unit_of_measurement: "V"
     device_class: "voltage"
-    icon: "mdi:bolt"
+    icon: "mdi:lightning-bolt"
 
   - name: "E3DC PVI Current L1"
     state_topic: "e3dc/pvi/current/L1"
     unit_of_measurement: "A"
     device_class: "current"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Current L2"
     state_topic: "e3dc/pvi/current/L2"
     unit_of_measurement: "A"
     device_class: "current"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Current L3"
     state_topic: "e3dc/pvi/current/L3"
     unit_of_measurement: "A"
     device_class: "current"
-    icon: "mdi:solar_power"
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Current String 1"
     state_topic: "e3dc/pvi/current/string_1"
     unit_of_measurement: "A"
     device_class: "current"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Current String 1"
     state_topic: "e3dc/pvi/current/string_2"
     unit_of_measurement: "A"
     device_class: "current"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Power L1"
     state_topic: "e3dc/pvi/power/L1"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:solar_power"
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Power L2"
     state_topic: "e3dc/pvi/power/L2"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Power L3"
     state_topic: "e3dc/pvi/power/L3"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Power String 1"
     state_topic: "e3dc/pvi/power/string_1"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Power String 1"
     state_topic: "e3dc/pvi/power/string_2"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Voltage L1"
     state_topic: "e3dc/pvi/voltage/L1"
     unit_of_measurement: "V"
     device_class: "voltage"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Voltage L2"
     state_topic: "e3dc/pvi/voltage/L2"
     unit_of_measurement: "V"
     device_class: "voltage"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Voltage L3"
     state_topic: "e3dc/pvi/voltage/L3"
     unit_of_measurement: "V"
     device_class: "voltage"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Voltage String 1"
     state_topic: "e3dc/pvi/voltage/string_1"
     unit_of_measurement: "V"
     device_class: "voltage"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC PVI Voltage String 2"
     state_topic: "e3dc/pvi/voltage/string_2"
     unit_of_measurement: "V"
     device_class: "voltage"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC EP Reserve Last SoC"
     state_topic: "e3dc/reserve/last_soc"
     unit_of_measurement: "%"
     device_class: "battery"
+    state_class: measurement
     icon: "mdi:battery"
 
   - name: "E3DC EP Reserve Max Energy"
     state_topic: "e3dc/reserve/max"
     unit_of_measurement: "Wh"
     device_class: "energy"
-    icon: "mdi:battery_full"
+    state_class: measurement
+    icon: "mdi:battery"
 
   - name: "E3DC Solar Energy"
     state_topic: "e3dc/solar/energy"
     unit_of_measurement: "kWh"
     device_class: "energy"
-    icon: "mdi:solar_power"
+    state_class: total_increasing
+    icon: "mdi:solar-power"
 
   - name: "E3DC Solar Power"
     state_topic: "e3dc/solar/power"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC Derate at percent value"
     state_topic: "e3dc/system/derate_at_percent_value"
     unit_of_measurement: "%"
-    icon: "mdi:block"
+    state_class: measurement
+    icon: "mdi:lock"
 
   - name: "E3DC Derate at power value"
     state_topic: "e3dc/system/derate_at_power_value"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:block"
+    state_class: measurement
+    icon: "mdi:lock"
 
   - name: "E3DC Installed Peak Power"
     state_topic: "e3dc/system/installed_peak_power"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:solar_power"
+    state_class: measurement
+    icon: "mdi:solar-power"
 
   - name: "E3DC Production Date"
     state_topic: "e3dc/system/production_date"
@@ -368,136 +422,160 @@ sensor:
   - name: "E3DC Week Battery Energy Charge"
     state_topic: "e3dc/week/battery/energy/charge"
     unit_of_measurement: "kWh"
-    device_class: "energy_storage"
-    icon: "mdi:battery_full"
+    device_class: "energy"
+    state_class: total_increasing
+    icon: "mdi:battery"
 
   - name: "E3DC Week Battery Energy Discharge"
     state_topic: "e3dc/week/battery/energy/discharge"
     unit_of_measurement: "kWh"
-    device_class: "energy_storage"
-    icon: "mdi:battery_full"
+    device_class: "energy"
+    state_class: total_increasing
+    icon: "mdi:battery"
 
   - name: "E3DC Week Consumed Production"
     state_topic: "e3dc/week/consumed"
     unit_of_measurement: "%"
+    state_class: measurement
 
   - name: "E3DC Week Grid In Energy"
     state_topic: "e3dc/week/grid/energy/in"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:arrow_forward"
 
   - name: "E3DC Week Grid Out Energy"
     state_topic: "e3dc/week/grid/energy/out"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:arrow_back"
 
   - name: "E3DC Week Home Energy"
     state_topic: "e3dc/week/home/energy"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:home"
 
   - name: "E3DC Week Solar Energy"
     state_topic: "e3dc/week/solar/energy"
     unit_of_measurement: "kWh"
     device_class: "energy"
-    icon: "mdi:solar_power"
+    state_class: total_increasing
+    icon: "mdi:solar-power"
 
   - name: "E3DC Year Autarky"
     state_topic: "e3dc/year/autarky"
     unit_of_measurement: "%"
+    state_class: measurement
 
   - name: "E3DC Year Battery Charge Energy"
     state_topic: "e3dc/year/battery/energy/charge"
     unit_of_measurement: "kWh"
     device_class: "energy_storage"
-    icon: "mdi:battery_full"
+    state_class: total_increasing
+    icon: "mdi:battery"
 
   - name: "E3DC Year Battery Discharge Energy"
     state_topic: "e3dc/year/battery/energy/discharge"
     unit_of_measurement: "kWh"
     device_class: "energy_storage"
-    icon: "mdi:battery_full"
+    state_class: total_increasing
+    icon: "mdi:battery"
 
   - name: "E3DC Year Consumed Production"
     state_topic: "e3dc/year/consumed"
     unit_of_measurement: "%"
+    state_class: measurement
 
   - name: "E3DC Year Grid In Energy"
     state_topic: "e3dc/year/grid/energy/in"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:arrow_forward"
 
   - name: "E3DC Year Grid Out Energy"
     state_topic: "e3dc/year/grid/energy/out"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:arrow_back"
 
   - name: "E3DC Year Home Energy"
     state_topic: "e3dc/year/home/energy"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:home"
 
   - name: "E3DC Year Solar Energy"
     state_topic: "e3dc/year/solar/energy"
     unit_of_measurement: "kWh"
     device_class: "energy"
-    icon: "mdi:solar_power"
+    state_class: total_increasing
+    icon: "mdi:solar-power"
 
   - name: "E3DC Yesterday Autarky"
     state_topic: "e3dc/yesterday/autarky"
     unit_of_measurement: "%"
+    state_class: measurement
 
   - name: "E3DC Yesterday Battery Energy Charge"
     state_topic: "e3dc/yesterday/battery/energy/charge"
     unit_of_measurement: "kWh"
-    device_class: "energy_storage"
-    icon: "mdi:battery_full"
+    device_class: "energy"
+    state_class: total_increasing
+    icon: "mdi:battery"
 
   - name: "E3DC Yesterday Battery Energy Discharge"
     state_topic: "e3dc/yesterday/battery/energy/discharge"
     unit_of_measurement: "kWh"
-    device_class: "energy_storage"
-    icon: "mdi:battery_full"
+    device_class: "energy"
+    state_class: total_increasing
+    icon: "mdi:battery"
 
   - name: "E3DC Yesterday Battery SoC"
     state_topic: "e3dc/yesterday/battery/soc"
     unit_of_measurement: "%"
     device_class: "battery"
+    state_class: measurement
     icon: "mdi:battery"
 
   - name: "E3DC Yesterday Consumed Production"
     state_topic: "e3dc/yesterday/consumed"
     unit_of_measurement: "%"
+    state_class: measurement
 
   - name: "E3DC Yesterday Grid In Energy"
     state_topic: "e3dc/yesterday/grid/energy/in"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:arrow_forward"
 
   - name: "E3DC Yesterday Grid Out Energy"
     state_topic: "e3dc/yesterday/grid/energy/out"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:arrow_back"
 
   - name: "E3DC Yesterday Home Energy"
     state_topic: "e3dc/yesterday/home/energy"
     unit_of_measurement: "kWh"
     device_class: "energy"
+    state_class: total_increasing
     icon: "mdi:home"
 
   - name: "E3DC Yesterday Solar Energy"
     state_topic: "e3dc/yesterday/solar/energy"
     unit_of_measurement: "kWh"
     device_class: "energy"
-    icon: "mdi:solar_power"
+    state_class: total_increasing
+    icon: "mdi:solar-power"
 
 binary_sensor:
   - name: "E3DC Balanced Phase L1"
@@ -519,6 +597,7 @@ binary_sensor:
     state_topic: "e3dc/ems/charging_lock"
     payload_on: "true"
     payload_off: "false"
+    icon: "mdi:lock"
 
   - name: "E3DC Charging Throttled"
     state_topic: "e3dc/ems/charging_throttled"
@@ -534,21 +613,25 @@ binary_sensor:
     state_topic: "e3dc/ems/discharging_lock"
     payload_on: "true"
     payload_off: "false"
+    icon: "mdi:lock"
 
   - name: "E3DC Discharging Time Lock"
     state_topic: "e3dc/ems/discharging_time_lock"
     payload_on: "true"
     payload_off: "false"
+    icon: "mdi:lock"
 
   - name: "E3DC Emergency Power Available"
     state_topic: "e3dc/ems/emergency_power_available"
     payload_on: "true"
     payload_off: "false"
+    icon: "mdi:shield-alert"
 
   - name: "E3DC Powersave Enabled"
     state_topic: "e3dc/ems/power_save"
     payload_on: "true"
     payload_off: "false"
+    icon: "mdi:power-standby"
 
   - name: "E3DC Grid In Limit"
     state_topic: "e3dc/grid_in_limit"
@@ -581,6 +664,7 @@ switch:
     command_topic: "e3dc/set/weather_regulation"
     payload_on: "true"
     payload_off: "false"
+    icon: "mdi:weather-cloudy-clock"
 
   - name: "E3DC Power Limits Used"
     state_topic: "e3dc/ems/power_limits"
@@ -594,7 +678,7 @@ number:
     command_topic: "e3dc/set/max_charge_power"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:bolt"
+    icon: "mdi:lightning-bolt"
     min: 0
     max: 3000
 
@@ -603,7 +687,7 @@ number:
     command_topic: "e3dc/set/max_discharge_power"
     unit_of_measurement: "W"
     device_class: "power"
-    icon: "mdi:bolt"
+    icon: "mdi:lightning-bolt"
     min: 0
     max: 3000
 
@@ -612,7 +696,7 @@ number:
     command_topic: "e3dc/set/reserve/energy"
     unit_of_measurement: "Wh"
     device_class: "energy"
-    icon: "mdi:battery_full"
+    icon: "mdi:battery"
     min: 0
 
   - name: "E3DC EP Reserve"
