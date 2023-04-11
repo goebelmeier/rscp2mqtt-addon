@@ -4,7 +4,7 @@ sensor:
     unit_of_measurement: "W"
     device_class: "power"
     state_class: measurement
-    icon: "mdi:electrical_services"
+    icon: "mdi:meter-electric"
 
   - name: "E3DC Autarky"
     state_topic: "e3dc/autarky"
@@ -105,14 +105,14 @@ sensor:
     unit_of_measurement: "kWh"
     device_class: "energy"
     state_class: total_increasing
-    icon: "mdi:arrow_back"
+    icon: "mdi:transmission-tower-export"
 
   - name: "E3DC Grid Out Energy"
     state_topic: "e3dc/grid/energy/out"
     unit_of_measurement: "kWh"
     device_class: "energy"
     state_class: total_increasing
-    icon: "mdi:arrow_forward"
+    icon: "mdi:transmission-tower-import"
 
   - name: "E3DC Grid Power"
     state_topic: "e3dc/grid/power"
@@ -167,14 +167,14 @@ sensor:
     unit_of_measurement: "kWh"
     device_class: "energy"
     state_class: total_increasing
-    icon: "mdi:arrow_back"
+    icon: "mdi:transmission-tower-export"
 
   - name: "E3DC Month Grid Out Energy"
     state_topic: "e3dc/month/grid/energy/out"
     unit_of_measurement: "kWh"
     device_class: "energy"
     state_class: total_increasing
-    icon: "mdi:arrow_forward"
+    icon: "mdi:transmission-tower-import"
 
   - name: "E3DC Month Home Energy"
     state_topic: "e3dc/month/home/energy"
@@ -443,14 +443,14 @@ sensor:
     unit_of_measurement: "kWh"
     device_class: "energy"
     state_class: total_increasing
-    icon: "mdi:arrow_forward"
+    icon: "mdi:transmission-tower-import"
 
   - name: "E3DC Week Grid Out Energy"
     state_topic: "e3dc/week/grid/energy/out"
     unit_of_measurement: "kWh"
     device_class: "energy"
     state_class: total_increasing
-    icon: "mdi:arrow_back"
+    icon: "mdi:transmission-tower-export"
 
   - name: "E3DC Week Home Energy"
     state_topic: "e3dc/week/home/energy"
@@ -495,14 +495,14 @@ sensor:
     unit_of_measurement: "kWh"
     device_class: "energy"
     state_class: total_increasing
-    icon: "mdi:arrow_forward"
+    icon: "mdi:transmission-tower-import"
 
   - name: "E3DC Year Grid Out Energy"
     state_topic: "e3dc/year/grid/energy/out"
     unit_of_measurement: "kWh"
     device_class: "energy"
     state_class: total_increasing
-    icon: "mdi:arrow_back"
+    icon: "mdi:transmission-tower-export"
 
   - name: "E3DC Year Home Energy"
     state_topic: "e3dc/year/home/energy"
@@ -554,14 +554,14 @@ sensor:
     unit_of_measurement: "kWh"
     device_class: "energy"
     state_class: total_increasing
-    icon: "mdi:arrow_forward"
+    icon: "mdi:transmission-tower-import"
 
   - name: "E3DC Yesterday Grid Out Energy"
     state_topic: "e3dc/yesterday/grid/energy/out"
     unit_of_measurement: "kWh"
     device_class: "energy"
     state_class: total_increasing
-    icon: "mdi:arrow_back"
+    icon: "mdi:transmission-tower-export"
 
   - name: "E3DC Yesterday Home Energy"
     state_topic: "e3dc/yesterday/home/energy"
