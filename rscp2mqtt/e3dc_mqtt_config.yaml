@@ -22,7 +22,7 @@ sensor:
     unit_of_measurement: "kWh"
     device_class: "energy_storage"
     icon: "mdi:bolt"
-  - name: "E3DC Battery Energy Disharge"
+  - name: "E3DC Battery Energy Discharge"
     state_topic: "e3dc/battery/energy/discharge"
     unit_of_measurement: "kWh"
     device_class: "energy_storage"
