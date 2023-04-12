@@ -346,49 +346,49 @@ $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE
 
 
 UNIQUE_ID=${UNIQUE_PREFIX}-ems-balanced_phases-l1
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC Balanced Phase L1", "stat_t": "e3dc/ems/balanced_phases/L1", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Balanced Phase L1", "stat_t": "e3dc/ems/balanced_phases/L1", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-ems-balanced_phases-l2
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC Balanced Phase L2", "stat_t": "e3dc/ems/balanced_phases/L2", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Balanced Phase L2", "stat_t": "e3dc/ems/balanced_phases/L2", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-ems-balanced_phases-l3
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC Balanced Phase L3", "stat_t": "e3dc/ems/balanced_phases/L3", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Balanced Phase L3", "stat_t": "e3dc/ems/balanced_phases/L3", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-ems-charging_lock
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC Charging Lock", "stat_t": "e3dc/ems/charging_lock", "pl_on": "true", "pl_off": "false", "ic": "mdi:lock", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Charging Lock", "stat_t": "e3dc/ems/charging_lock", "pl_on": "true", "pl_off": "false", "ic": "mdi:lock", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-ems-charging_throttled
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC Charging Throttled", "stat_t": "e3dc/ems/charging_throttled", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Charging Throttled", "stat_t": "e3dc/ems/charging_throttled", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-ems-charging_time_lock
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC Charging Time Lock", "stat_t": "e3dc/ems/charging_time_lock", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Charging Time Lock", "stat_t": "e3dc/ems/charging_time_lock", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-ems-discharging_lock
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC Discharging Lock", "stat_t": "e3dc/ems/discharging_lock", "pl_on": "true", "pl_off": "false", "ic": "mdi:lock", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Discharging Lock", "stat_t": "e3dc/ems/discharging_lock", "pl_on": "true", "pl_off": "false", "ic": "mdi:lock", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-ems-discharging_time_lock
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC Discharging Time Lock", "stat_t": "e3dc/ems/discharging_time_lock", "pl_on": "true", "pl_off": "false", "ic": "mdi:lock", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Discharging Time Lock", "stat_t": "e3dc/ems/discharging_time_lock", "pl_on": "true", "pl_off": "false", "ic": "mdi:lock", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-ems-emergency_power_available
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC Emergency Power Available", "stat_t": "e3dc/ems/emergency_power_available", "pl_on": "true", "pl_off": "false", "ic": "mdi:shield-alert", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Emergency Power Available", "stat_t": "e3dc/ems/emergency_power_available", "pl_on": "true", "pl_off": "false", "ic": "mdi:shield-alert", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-ems-power_save
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC Powersave Enabled", "stat_t": "e3dc/ems/power_save", "pl_on": "true", "pl_off": "false", "ic": "mdi:power-standby", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Powersave Enabled", "stat_t": "e3dc/ems/power_save", "pl_on": "true", "pl_off": "false", "ic": "mdi:power-standby", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-grid_in_limit
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC Grid In Limit", "stat_t": "e3dc/grid_in_limit", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Grid In Limit", "stat_t": "e3dc/grid_in_limit", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-pm-active_phases-l1
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC PM Active Phase L1", "stat_t": "e3dc/pm/active_phases/L1", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC PM Active Phase L1", "stat_t": "e3dc/pm/active_phases/L1", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-pm-active_phases-l2
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC PM Active Phase L2", "stat_t": "e3dc/pm/active_phases/L2", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC PM Active Phase L2", "stat_t": "e3dc/pm/active_phases/L2", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-pm-active_phases-l3
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC PM Active Phase L3", "stat_t": "e3dc/pm/active_phases/L3", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC PM Active Phase L3", "stat_t": "e3dc/pm/active_phases/L3", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-pvi-on_grid
-$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name:" "E3DC PVI On Grid", "stat_t": "e3dc/pvi/on_grid", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/binary_sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC PVI On Grid", "stat_t": "e3dc/pvi/on_grid", "pl_on": "true", "pl_off": "false", '"${DEVICE}"'}'
 
 
 UNIQUE_ID=${UNIQUE_PREFIX}-ems-weather_regulation

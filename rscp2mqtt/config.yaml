@@ -1,7 +1,7 @@
 ---
 name: "rscp2mqtt"
 description: "Bridge between an E3/DC pv inverter device and a MQTT broker"
-version: "0.0.35"
+version: "0.0.36"
 slug: "rscp2mqtt"
 init: false
 services:
