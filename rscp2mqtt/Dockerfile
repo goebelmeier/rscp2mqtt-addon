@@ -1,6 +1,7 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM as builder
 RUN apk add --no-cache \
+    mosquitto-clients \
     mosquitto-dev \
     git \
     build-base
