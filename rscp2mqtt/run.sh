@@ -81,7 +81,7 @@ UNIQUE_ID=${UNIQUE_PREFIX}-battery-cycles
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Battery Cycles", "stat_t": "e3dc/battery/cycles", "stat_cla": "total_increasing", "ic": "mdi:autorenew", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-battery-dcb_count
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Battery Modules Count", "stat_t": "e3dc/battery/dcb_count", "stat_cla": measurement, '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Battery Modules Count", "stat_t": "e3dc/battery/dcb_count", "stat_cla": "measurement", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-battery-energy-charge
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Battery Energy Charge", "stat_t": "e3dc/battery/energy/charge", "unit_of_meas": "kWh", "dev_cla": "energy", "stat_cla": "total_increasing", "ic": "mdi:lightning-bolt", '"${DEVICE}"'}'
@@ -114,7 +114,7 @@ UNIQUE_ID=${UNIQUE_PREFIX}-battery-voltage
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Battery Voltage", "stat_t": "e3dc/battery/voltage", "unit_of_meas": "V", "dev_cla": "voltage", "stat_cla": "measurement", "ic": "mdi:battery", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-consumed
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Consumed Production", "stat_t": "e3dc/consumed", "unit_of_meas": "%", "stat_cla": measurement, '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Consumed Production", "stat_t": "e3dc/consumed", "unit_of_meas": "%", "stat_cla": "measurement", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-coupling-mode
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Coupling Mode", "stat_t": "e3dc/coupling/mode", '"${DEVICE}"'}'
@@ -141,7 +141,7 @@ UNIQUE_ID=${UNIQUE_PREFIX}-mode
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Mode", "stat_t": "e3dc/mode", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-month-autarky
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Month Autarky", "stat_t": "e3dc/month/autarky", "unit_of_meas": "%", "stat_cla": measurement, '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Month Autarky", "stat_t": "e3dc/month/autarky", "unit_of_meas": "%", "stat_cla": "measurement", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-month-battery-energy-charge
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Month Battery Energy Charge", "stat_t": "e3dc/month/battery/energy/charge", "unit_of_meas": "kWh", "dev_cla": "energy", "stat_cla": "total_increasing", "ic": "mdi:battery", '"${DEVICE}"'}'
@@ -150,7 +150,7 @@ UNIQUE_ID=${UNIQUE_PREFIX}-month-battery-energy-discharge
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Month Battery Energy Discharge", "stat_t": "e3dc/month/battery/energy/discharge", "unit_of_meas": "kWh", "dev_cla": "energy", "stat_cla": "total_increasing", "ic": "mdi:battery", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-month-consumed
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Month Consumed Production", "stat_t": "e3dc/month/consumed", "unit_of_meas": "%", "stat_cla": measurement, '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Month Consumed Production", "stat_t": "e3dc/month/consumed", "unit_of_meas": "%", "stat_cla": "measurement", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-month-grid-energy-in
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Month Grid In Energy", "stat_t": "e3dc/month/grid/energy/in", "unit_of_meas": "kWh", "dev_cla": "energy", "stat_cla": "total_increasing", "ic": "mdi:transmission-tower-export", '"${DEVICE}"'}'
@@ -279,7 +279,7 @@ UNIQUE_ID=${UNIQUE_PREFIX}-week-battery-energy-discharge
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Week Battery Energy Discharge", "stat_t": "e3dc/week/battery/energy/discharge", "unit_of_meas": "kWh", "dev_cla": "energy", "stat_cla": "total_increasing", "ic": "mdi:battery", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-week-consumed
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Week Consumed Production", "stat_t": "e3dc/week/consumed", "unit_of_meas": "%", "stat_cla": measurement, '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Week Consumed Production", "stat_t": "e3dc/week/consumed", "unit_of_meas": "%", "stat_cla": "measurement", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-week-grid-energy-in
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Week Grid In Energy", "stat_t": "e3dc/week/grid/energy/in", "unit_of_meas": "kWh", "dev_cla": "energy", "stat_cla": "total_increasing", "ic": "mdi:transmission-tower-import", '"${DEVICE}"'}'
@@ -294,7 +294,7 @@ UNIQUE_ID=${UNIQUE_PREFIX}-week-solar-energy
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Week Solar Energy", "stat_t": "e3dc/week/solar/energy", "unit_of_meas": "kWh", "dev_cla": "energy", "stat_cla": "total_increasing", "ic": "mdi:solar-power", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-year-autarky
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Autarky", "stat_t": "e3dc/year/autarky", "unit_of_meas": "%", "stat_cla": measurement, '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Autarky", "stat_t": "e3dc/year/autarky", "unit_of_meas": "%", "stat_cla": "measurement", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-year-battery-energy-charge
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Battery Charge Energy", "stat_t": "e3dc/year/battery/energy/charge", "unit_of_meas": "kWh", "dev_cla": "energy_storage", "stat_cla": "total_increasing", "ic": "mdi:battery", '"${DEVICE}"'}'
@@ -303,7 +303,7 @@ UNIQUE_ID=${UNIQUE_PREFIX}-year-battery-energy-discharge
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Battery Discharge Energy", "stat_t": "e3dc/year/battery/energy/discharge", "unit_of_meas": "kWh", "dev_cla": "energy_storage", "stat_cla": "total_increasing", "ic": "mdi:battery", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-year-consumed
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Consumed Production", "stat_t": "e3dc/year/consumed", "unit_of_meas": "%", "stat_cla": measurement, '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Consumed Production", "stat_t": "e3dc/year/consumed", "unit_of_meas": "%", "stat_cla": "measurement", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-year-grid-energy-in
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Grid In Energy", "stat_t": "e3dc/year/grid/energy/in", "unit_of_meas": "kWh", "dev_cla": "energy", "stat_cla": "total_increasing", "ic": "mdi:transmission-tower-import", '"${DEVICE}"'}'
@@ -318,7 +318,7 @@ UNIQUE_ID=${UNIQUE_PREFIX}-year-solar-energy
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Solar Energy", "stat_t": "e3dc/year/solar/energy", "unit_of_meas": "kWh", "dev_cla": "energy", "stat_cla": "total_increasing", "ic": "mdi:solar-power", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-yesterday-autarky
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Yesterday Autarky", "stat_t": "e3dc/yesterday/autarky", "unit_of_meas": "%", "stat_cla": measurement, '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Yesterday Autarky", "stat_t": "e3dc/yesterday/autarky", "unit_of_meas": "%", "stat_cla": "measurement", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-yesterday-battery-energy-charge
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Yesterday Battery Energy Charge", "stat_t": "e3dc/yesterday/battery/energy/charge", "unit_of_meas": "kWh", "dev_cla": "energy", "stat_cla": "total_increasing", "ic": "mdi:battery", '"${DEVICE}"'}'
@@ -330,7 +330,7 @@ UNIQUE_ID=${UNIQUE_PREFIX}-yesterday-battery-soc
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Yesterday Battery SoC", "stat_t": "e3dc/yesterday/battery/soc", "unit_of_meas": "%", "dev_cla": "battery", "stat_cla": "measurement", "ic": "mdi:battery", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-yesterday-consumed
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Yesterday Consumed Production", "stat_t": "e3dc/yesterday/consumed", "unit_of_meas": "%", "stat_cla": measurement, '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Yesterday Consumed Production", "stat_t": "e3dc/yesterday/consumed", "unit_of_meas": "%", "stat_cla": "measurement", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-yesterday-grid-energy-in
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Yesterday Grid In Energy", "stat_t": "e3dc/yesterday/grid/energy/in", "unit_of_meas": "kWh", "dev_cla": "energy", "stat_cla": "total_increasing", "ic": "mdi:transmission-tower-import", '"${DEVICE}"'}'
