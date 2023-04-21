@@ -74,7 +74,7 @@ $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE
 UNIQUE_ID=${UNIQUE_PREFIX}-autarky
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Autarky", "stat_t": "e3dc/autarky", "stat_cla": "measurement", "unit_of_meas": "%", '"${DEVICE}"'}'
 
-UNIQUE_ID=${UNIQUE_PREFIX}-battery-current
+UNIQUE_ID=${UNIQUE_PREFIX}-battery-currentrscp2mqtt/run.sh
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Battery Current", "stat_t": "e3dc/battery/current", "unit_of_meas": "A", "dev_cla": "current", "stat_cla": "measurement", "ic": "mdi:battery", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-battery-cycles
@@ -165,13 +165,13 @@ UNIQUE_ID=${UNIQUE_PREFIX}-month-solar-energy
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Month Solar Energy", "stat_t": "e3dc/month/solar/energy", "unit_of_meas": "kWh", "dev_cla": "energy", "stat_cla": "total_increasing", "ic": "mdi:solar-power", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-pm-energy-l1
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC PM Energy L1", "stat_t": "e3dc/pm/energy/L1", "unit_of_meas": "Wh", "dev_cla": "energy", "stat_cla": "measurement", "ic": "mdi:lightning-bolt", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC PM Energy L1", "stat_t": "e3dc/pm/energy/L1", "unit_of_meas": "Wh", "dev_cla": "energy", "stat_cla": "total", "ic": "mdi:lightning-bolt", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-pm-energy-l2
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC PM Energy L2", "stat_t": "e3dc/pm/energy/L2", "unit_of_meas": "Wh", "dev_cla": "energy", "stat_cla": "measurement", "ic": "mdi:lightning-bolt", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC PM Energy L2", "stat_t": "e3dc/pm/energy/L2", "unit_of_meas": "Wh", "dev_cla": "energy", "stat_cla": "total", "ic": "mdi:lightning-bolt", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-pm-energy-l3
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC PM Energy L3", "stat_t": "e3dc/pm/energy/L3", "unit_of_meas": "Wh", "dev_cla": "energy", "stat_cla": "measurement", "ic": "mdi:lightning-bolt", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC PM Energy L3", "stat_t": "e3dc/pm/energy/L3", "unit_of_meas": "Wh", "dev_cla": "energy", "stat_cla": "total", "ic": "mdi:lightning-bolt", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-pm-power-l1
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC PM Power L1", "stat_t": "e3dc/pm/power/L1", "unit_of_meas": "W", "dev_cla": "power", "stat_cla": "measurement", "ic": "mdi:lightning-bolt", '"${DEVICE}"'}'
@@ -240,7 +240,7 @@ UNIQUE_ID=${UNIQUE_PREFIX}-reserve-last_soc
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC EP Reserve Last SoC", "stat_t": "e3dc/reserve/last_soc", "unit_of_meas": "%", "dev_cla": "battery", "stat_cla": "measurement", "ic": "mdi:battery", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-reserve-max
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC EP Reserve Max Energy", "stat_t": "e3dc/reserve/max", "unit_of_meas": "Wh", "dev_cla": "energy", "stat_cla": "measurement", "ic": "mdi:battery", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC EP Reserve Max Energy", "stat_t": "e3dc/reserve/max", "unit_of_meas": "Wh", "dev_cla": "energy", "stat_cla": "total", "ic": "mdi:battery", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-solar-energy
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Solar Energy", "stat_t": "e3dc/solar/energy", "unit_of_meas": "kWh", "dev_cla": "energy", "stat_cla": "total_increasing", "ic": "mdi:solar-power", '"${DEVICE}"'}'
@@ -297,10 +297,10 @@ UNIQUE_ID=${UNIQUE_PREFIX}-year-autarky
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Autarky", "stat_t": "e3dc/year/autarky", "unit_of_meas": "%", "stat_cla": "measurement", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-year-battery-energy-charge
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Battery Charge Energy", "stat_t": "e3dc/year/battery/energy/charge", "unit_of_meas": "kWh", "dev_cla": "energy_storage", "stat_cla": "total_increasing", "ic": "mdi:battery", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Battery Charge Energy", "stat_t": "e3dc/year/battery/energy/charge", "unit_of_meas": "kWh", "dev_cla": "energy_storage", "stat_cla": "measurement", "ic": "mdi:battery", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-year-battery-energy-discharge
-$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Battery Discharge Energy", "stat_t": "e3dc/year/battery/energy/discharge", "unit_of_meas": "kWh", "dev_cla": "energy_storage", "stat_cla": "total_increasing", "ic": "mdi:battery", '"${DEVICE}"'}'
+$MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Battery Discharge Energy", "stat_t": "e3dc/year/battery/energy/discharge", "unit_of_meas": "kWh", "dev_cla": "energy_storage", "stat_cla": "measurement", "ic": "mdi:battery", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-year-consumed
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Year Consumed Production", "stat_t": "e3dc/year/consumed", "unit_of_meas": "%", "stat_cla": "measurement", '"${DEVICE}"'}'
