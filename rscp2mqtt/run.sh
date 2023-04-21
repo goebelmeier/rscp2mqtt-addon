@@ -74,7 +74,7 @@ $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE
 UNIQUE_ID=${UNIQUE_PREFIX}-autarky
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Autarky", "stat_t": "e3dc/autarky", "stat_cla": "measurement", "unit_of_meas": "%", '"${DEVICE}"'}'
 
-UNIQUE_ID=${UNIQUE_PREFIX}-battery-currentrscp2mqtt/run.sh
+UNIQUE_ID=${UNIQUE_PREFIX}-battery-current
 $MQTT_PUB -t homeassistant/sensor/${UNIQUE_ID}/config -m '{"uniq_id": "'${UNIQUE_ID}'", "name": "E3DC Battery Current", "stat_t": "e3dc/battery/current", "unit_of_meas": "A", "dev_cla": "current", "stat_cla": "measurement", "ic": "mdi:battery", '"${DEVICE}"'}'
 
 UNIQUE_ID=${UNIQUE_PREFIX}-battery-cycles
