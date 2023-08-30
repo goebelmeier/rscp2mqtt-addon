@@ -1,8 +1,9 @@
 ---
-name: "rscp2mqtt"
-description: "Bridge between an E3/DC pv inverter device and a MQTT broker"
-version: "0.0.39"
+name: "[deprecated] rscp2mqtt"
+description: "[deprecated] Bridge between an E3/DC pv inverter device and a MQTT broker"
+version: "0.0.40"
 slug: "rscp2mqtt"
+stage: deprecated
 init: false
 services:
   - "mqtt:need"

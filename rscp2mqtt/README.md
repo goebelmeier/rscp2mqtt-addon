@@ -1,4 +1,4 @@
-# Home Assistant rscp2mqtt Add-on: Bridge between an E3/DC pv inverter device and a MQTT broker
+# [deprecated] Home Assistant rscp2mqtt Add-on: Bridge between an E3/DC pv inverter device and a MQTT broker
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -18,7 +18,9 @@
 
 ## About
 
-This is an add-on for Home Assistant which uses the Remote-Storage-Control-Protocol (RSCP) to communicate with E3/DC
+Deprecation notice: This add-on has been deprecated in favor of the much better native integration https://github.com/torbennehmer/hacs-e3dc
+
+This was an add-on for Home Assistant which uses the Remote-Storage-Control-Protocol (RSCP) to communicate with E3/DC
 home power plants consisting of PV inverters, batteries and battery converters. This addon is based on the great
 [rscp2mqtt][rscp2mqtt] projekt which itself is based on the HagerEnergy RSCP sample application.
 
